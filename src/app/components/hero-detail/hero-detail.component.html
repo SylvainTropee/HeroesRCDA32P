@@ -1,3 +1,3 @@
-<div *ngIf="hero">
-  <img [src]="hero.image" [alt]="hero.name">
+<div *ngIf="hero$ | async as hero">
+  <img [src]="hero.images.sm" [alt]="hero.name">
 </div>

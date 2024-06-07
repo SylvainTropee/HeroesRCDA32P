@@ -4,6 +4,6 @@
 <div class="flex flex-wrap gap-2">
   <a *ngFor="let hero of heroes" [routerLink]="['/hero', hero.id]">
 <!--    utilisation des crochets ou des brackets en fonction du besoin-->
-    <img class="rounded-3xl" [src]="hero.image" alt="{{ hero.name }}">
+    <img class="rounded-3xl" [src]="hero.images.sm" alt="{{ hero.name }}">
   </a>
 </div>
