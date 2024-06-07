@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Hero} from "../models/hero";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
+import {Biography} from "../models/biography";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,12 @@ export class HeroApiService {
   }
 
   public getHeroById(id: number): Observable<Hero> {
+    // return this.httpClient.get<{ biography: Biography }>(`${this.BASE_URL}/id/${id}.json`)
+    //   .pipe(
+    //     map(response => response.biography)
+    //   )
     return this.httpClient.get<Hero>(`${this.BASE_URL}/id/${id}.json`)
+
   }
 
 }
